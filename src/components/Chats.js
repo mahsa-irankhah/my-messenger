@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { auth } from '../firebase';
 import { useNavigate } from 'react-router-dom';
 import { ChatEngine } from 'react-chat-engine';
@@ -54,7 +54,7 @@ const Chats = () => {
               .then(response => {
                 return response;
               })
-              .catch((error) => console.log(error));
+      
         })
     }, [user, navigate])
 
