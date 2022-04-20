@@ -12,7 +12,6 @@ import { authContext } from '../context/AuthContextProvider';
 
 const Chats = () => {
 
-    let [loading, setLoading] = useState(true);
     const user = useContext(authContext);
     const navigate = useNavigate();
 
@@ -34,8 +33,8 @@ const Chats = () => {
             "user-secret": user.uid
           }
         })
-        .then(() => {
-            setLoading(false)
+        .then(response => {
+            return response;
         })
         .catch(() => {
             let formdata = new FormData();
@@ -52,8 +51,8 @@ const Chats = () => {
                   "PRIVATE-KEY": "2200e5d1-3606-4b66-b5f5-1bb4b20e2f8a",
                 },
               })
-              .then(() => {
-                setLoading(false);
+              .then(response => {
+                return response;
               })
               .catch((error) => console.log(error));
         })
@@ -65,7 +64,7 @@ const Chats = () => {
         return new File([data], "userPhoto.jpg", {type: "image/jpeg"})
     }
 
-    if (!user || loading) return "Loading..."
+    if (!user ) return "Loading..."
    
     return (
       <div>
