@@ -44,17 +44,18 @@ const Chats = () => {
             formdata.append("secret", user.uid);
             getFile(user.photoURL).then(avatar => {
                formdata.append("avatar", avatar, avatar.name)
-               axios
-                 .post("https://api.chatengine.io/users/", formdata, {
-                   headers: {
-                     "PRIVATE-KEY": "2200e5d1-3606-4b66-b5f5-1bb4b20e2f8a",
-                   },
-                 })
-                 .then(() => {
-                   setLoading(false);
-                 })
-                 .catch((error) => console.log(error));
+               
             })
+            axios
+              .post("https://api.chatengine.io/users/", formdata, {
+                headers: {
+                  "PRIVATE-KEY": "2200e5d1-3606-4b66-b5f5-1bb4b20e2f8a",
+                },
+              })
+              .then(() => {
+                setLoading(false);
+              })
+              .catch((error) => console.log(error));
         })
     }, [user, navigate])
 
