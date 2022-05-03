@@ -13,7 +13,7 @@ const Login = () => {
         <div className='signin-container' 
         onClick={() => auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider())}>
           <img src={google} alt="google" />
-          Sign up with Google
+          Sign in with Google
         </div>
       </div>
     );
