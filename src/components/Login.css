@@ -32,3 +32,23 @@
 .signin-container img {
     padding: 20px;
 }
+
+@media (max-width:480px) {
+    .login-container {
+        box-sizing: border-box;
+        width: 90%;
+        height: 80%;
+    }
+
+    .login-container h2 {
+        font-size: 20px;
+        width: 100%;
+        line-height: 1.5;
+    }
+    .signin-container {
+        width: 100%;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+}
